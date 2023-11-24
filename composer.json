@@ -1,0 +1,22 @@
+{
+  "name": "myohanhtet/mini",
+  "description": "mini mvc",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Myo Han Htet",
+      "email": "myohanhtet.ly@gmail.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^3.5",
+    "respect/validation": "^2.2",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "files": ["src/Config/helpers.php"],
+    "psr-4": {
+      "Myohanhtet\\": "src/"
+    }
+  }
+}
