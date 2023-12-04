@@ -8,7 +8,10 @@
 ## Packages
 - [Monolog](https://github.com/Seldaek/monolog)
 - [Respect\Validation](https://github.com/Respect/Validation)
-
+## Installations
+```shell
+composer install
+```
 import sql `src\demon.sql`
 
 web root `src\publish`
