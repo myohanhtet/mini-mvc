@@ -14,17 +14,6 @@
                     <input class="form-control " value="<?php echo $data['user_code'] ?>" name="user_code" type="text" required="" placeholder="Enter full name">
                 </div>
                 <div class="mb-3 col-6">
-                    <label class="form-label" for="exampleSelect1">Person No</label>
-                    <select id="exampleSelect1" class="form-control form-select" name="person_no">
-                        <?php
-                        foreach (\Myohanhtet\Model\Person::all('person_no') as $person) {
-                            $selected = ($data['person_no'] === $person['person_no']) ? "selected" : "";
-                            echo "<option {$selected} value='{$person['person_no']}'>{$person['person_no']}</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="mb-3 col-6">
                     <label class="form-label">Password</label>
                     <input class="form-control " value="" name="password" type="password" placeholder="Enter password">
                     <div id="passwordHelpBlock" class="form-text">

@@ -61,8 +61,8 @@ class User
         // Hash the password before saving to the database
         $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO users (name, username, user_code, person_no, email, password, created_at, updated_at) 
-              VALUES (:name, :username, :user_code, :person_no, :email, :password, NOW(), NOW())";
+        $query = "INSERT INTO users (name, username, user_code, email, password, created_at, updated_at) 
+              VALUES (:name, :username, :user_code, :email, :password, NOW(), NOW())";
 
         $stmt = Db::getInstance()->prepare($query);
 
@@ -70,7 +70,6 @@ class User
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':username', $data['username']);
         $stmt->bindParam(':user_code', $data['user_code']);
-        $stmt->bindParam(':person_no', $data['person_no']);
         $stmt->bindParam(':email', $data['email']);
         $stmt->bindParam(':password', $data['password']);
 

@@ -13,7 +13,6 @@
                     <tr class="text-center">
                         <th>Name</th>
                         <th>User Code</th>
-                        <th>Person No.</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -23,7 +22,6 @@
                         echo "<tr class='text-center'>";
                         echo "<td>". $user['name'] ."</td>";
                         echo "<td>". $user['user_code']."</td>";
-                        echo "<td>". $user['person_no']."</td>";
                         echo "<td>". $user['created_at']."</td>";
                         echo '<td class="text-center"><div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                   <a type="button" href="'."users/".$user['id']."/show".'" class="btn btn-outline-info"><i class="bi bi-eye-fill"></i></a>

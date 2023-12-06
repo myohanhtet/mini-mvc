@@ -19,7 +19,6 @@ class UserValidation
                 $user = User::where('user_code','=',$input);
                 return $user === null;
             })->length(2, 20)->setName('User Code'))
-            ->key('person_no',v::notEmpty()->setName("Person No"))
             ->key('password',v::stringType()
                 ->length(8, 20)
                 ->regex('/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/')
@@ -49,7 +48,6 @@ class UserValidation
                 }
                 return true;
             })->length(2, 20)->setName('User Code'))
-            ->key('person_no',v::notEmpty()->setName("Person No"))
             ->key('password',v::optional(
                 v::stringType()
                     ->length(8, 20)
