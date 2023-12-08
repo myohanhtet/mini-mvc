@@ -59,3 +59,11 @@ if (!function_exists('check_session_time')) {
         }
     }
 }
+
+if (!function_exists('url_encrypt_id')) {
+    function url_encrypt_id($id): string
+    {
+      $encryId =  \Myohanhtet\Libs\Encryption::encrypt($id);
+      return urlencode($encryId);
+    }
+}

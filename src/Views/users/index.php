@@ -18,15 +18,17 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    <?php foreach ($data as $user) {
+                    <?php
+                    foreach ($data as $user) {
+                        $id = \Myohanhtet\Libs\Encryption::encryptor('en',$user['id']);
                         echo "<tr class='text-center'>";
                         echo "<td>". $user['name'] ."</td>";
                         echo "<td>". $user['user_code']."</td>";
                         echo "<td>". $user['created_at']."</td>";
                         echo '<td class="text-center"><div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                  <a type="button" href="'."users/".$user['id']."/show".'" class="btn btn-outline-info"><i class="bi bi-eye-fill"></i></a>
-                  <a type="button" href="'."users/".$user['id']."/edit".'" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></a>
-                  <a type="button" href="'."users/".$user['id']."/delete".'" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                  <a type="button" href="'."users/".$id."/show".'" class="btn btn-outline-info"><i class="bi bi-eye-fill"></i></a>
+                  <a type="button" href="'."users/".$id."/edit".'" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></a>
+                  <a type="button" href="'."users/".$id."/delete".'" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                 </div></td>';
                         echo "</tr>";
                     }

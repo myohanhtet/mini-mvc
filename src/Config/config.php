@@ -8,5 +8,10 @@ return [
         'dbname' => 'sms_ysx',
         'username' => 'root',
         'password' => ''
-    ]
+    ],
+    'encryption' => [
+        'key' => 'your',
+        'cipher' => 'AES-256-CBC',
+        'iv' => 'muni123'
+    ],
 ];

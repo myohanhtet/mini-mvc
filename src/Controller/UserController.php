@@ -4,6 +4,7 @@ namespace Myohanhtet\Controller;
 
 use Myohanhtet\Config\Flash;
 use Myohanhtet\Config\View;
+use Myohanhtet\Libs\Encryption;
 use Myohanhtet\Model\User;
 use Myohanhtet\Validation\UserValidation;
 
@@ -18,6 +19,7 @@ class UserController
 
     /**
      * @return void
+     * @throws \Exception
      */
     public function index()
     {
@@ -71,6 +73,7 @@ class UserController
      */
     public function edit($id): void
     {
+        $id = Encryption::encryptor('de',$id);
         $user = User::findById($id);
         View::render('users/edit',$user);
     }
@@ -79,8 +82,10 @@ class UserController
      * @param $id
      * @return void
      */
-    public function update($id)
+    public function update($id): void
     {
+        $id = Encryption::encryptor('de',$id);
+
         $data = $_POST; // Assuming form data is submitted via POST
         $user = User::findById($id);
         $valid = $this->validate->UserUpdateValidation($data,$user['user_code']);
@@ -104,6 +109,7 @@ class UserController
      */
     public function delete($id): void
     {
+        $id = Encryption::encryptor('de',$id);
         // Delete the user by ID
         $user = User::delete($id);
         if ($user < 1) {
