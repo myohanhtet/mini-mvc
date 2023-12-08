@@ -1,6 +1,6 @@
 <?php
 
-namespace Myohanhtet\Config;
+namespace Myohanhtet\Libs;
 
 class Flash
 {

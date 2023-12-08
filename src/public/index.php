@@ -1,6 +1,6 @@
 <?php
 
-use Myohanhtet\Config\View;
+use Myohanhtet\Libs\View;
 
 session_start();
 require_once __DIR__ . '/../../vendor/autoload.php';

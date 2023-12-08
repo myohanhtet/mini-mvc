@@ -2,8 +2,8 @@
 
 namespace Myohanhtet\Controller;
 
-use Myohanhtet\Config\Flash;
-use Myohanhtet\Config\View;
+use Myohanhtet\Libs\Flash;
+use Myohanhtet\Libs\View;
 use Myohanhtet\Model\User;
 
 class AuthController
@@ -38,6 +38,7 @@ class AuthController
     {
         // Handle login form submission
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $userCode = $_POST['user_code'];
             $password = $_POST['password'];
             $user = User::findByUserCode($userCode);
@@ -49,8 +50,10 @@ class AuthController
                 redirect('/dashboard');
             } else {
                 Flash::set('error',"Invalid user code or password");
+                View::render('auth/login',[],400);
             }
         }
-        View::render('auth/login');
+        Flash::set('error',"Method Not Allowed");
+        View::render('auth/login',[],405);
     }
 }

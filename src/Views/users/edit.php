@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 <div class="tile">
     <h3 class="tile-title">User Form</h3>
-    <form action="/users/<?php echo $data['id'] ?>/update" method="POST">
+    <form action="/users/<?php echo \Myohanhtet\Libs\Encryption::encryptor('en',$data['id']) ?>/update" method="POST">
         <div class="tile-body">
             <div class="row">
                 <div class="mb-3 col-6">

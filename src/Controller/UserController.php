@@ -2,8 +2,8 @@
 
 namespace Myohanhtet\Controller;
 
-use Myohanhtet\Config\Flash;
-use Myohanhtet\Config\View;
+use Myohanhtet\Libs\Flash;
+use Myohanhtet\Libs\View;
 use Myohanhtet\Libs\Encryption;
 use Myohanhtet\Model\User;
 use Myohanhtet\Validation\UserValidation;
@@ -85,7 +85,6 @@ class UserController
     public function update($id): void
     {
         $id = Encryption::encryptor('de',$id);
-
         $data = $_POST; // Assuming form data is submitted via POST
         $user = User::findById($id);
         $valid = $this->validate->UserUpdateValidation($data,$user['user_code']);

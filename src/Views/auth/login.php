@@ -26,6 +26,28 @@
 <!--        <h3>Web Portal</h3>-->
     </div>
     <div class="login-box">
+        <?php
+        // Display flash messages
+        $successMessage = \Myohanhtet\Libs\Flash::get('success');
+        $validateError = \Myohanhtet\Libs\Flash::get('validateError');
+        $error = \Myohanhtet\Libs\Flash::get('error');
+        $warning = \Myohanhtet\Libs\Flash::get('warning');
+
+        if ($successMessage) {
+            echo '<div class="alert alert-success mt-2">' . $successMessage . '</div>';
+        }elseif ($validateError) {
+            echo '<div class="alert alert-warning mt-2">';
+            foreach ($validateError as $error)
+            {
+                echo '<li>'.$error.'</li>';
+            }
+            echo '</div>';
+        } elseif ($error) {
+            echo '<div class="alert alert-danger mt-2">' . $error . '</div>';
+        } elseif ($warning) {
+            echo '<div class="alert alert-warning mt-2">' . $error . '</div>';
+        }
+        ?>
         <form class="login-form" method="POST" action="/login/post">
             <h3 class="login-head"><i class="bi bi-person me-2"></i>SIGN IN</h3>
             <div class="mb-3">

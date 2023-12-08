@@ -34,7 +34,7 @@ if (!function_exists('config')) {
     function config($key, $default = null)
     {
         $keys = explode('.', $key);
-        $config = include __DIR__ . '/config.php';
+        $config = include __DIR__ . '/../Config/config.php';
         foreach ($keys as $part) {
             if (isset($config[$part])) {
                 $config = $config[$part];

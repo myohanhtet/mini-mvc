@@ -1,5 +1,5 @@
 <?php
-namespace Myohanhtet\Config;
+namespace Myohanhtet\Libs;
 use PDO;
 
 class DB

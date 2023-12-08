@@ -15,7 +15,9 @@
     "ext-openssl": "*"
   },
   "autoload": {
-    "files": ["src/Config/helpers.php"],
+    "files": [
+      "src/Libs/helpers.php"
+    ],
     "psr-4": {
       "Myohanhtet\\": "src/"
     }

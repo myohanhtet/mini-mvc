@@ -2,7 +2,7 @@
 
 namespace Myohanhtet\Controller;
 
-use Myohanhtet\Config\View;
+use Myohanhtet\Libs\View;
 
 class HomeController
 {

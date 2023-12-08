@@ -24,10 +24,10 @@
 <main class="app-content">
     <?php
     // Display flash messages
-    $successMessage = \Myohanhtet\Config\Flash::get('success');
-    $validateError = \Myohanhtet\Config\Flash::get('validateError');
-    $error = \Myohanhtet\Config\Flash::get('error');
-    $warning = \Myohanhtet\Config\Flash::get('warning');
+    $successMessage = \Myohanhtet\Libs\Flash::get('success');
+    $validateError = \Myohanhtet\Libs\Flash::get('validateError');
+    $error = \Myohanhtet\Libs\Flash::get('error');
+    $warning = \Myohanhtet\Libs\Flash::get('warning');
 
     if ($successMessage) {
         echo '<div class="alert alert-success mt-2">' . $successMessage . '</div>';

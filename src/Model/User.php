@@ -3,8 +3,8 @@
 namespace Myohanhtet\Model;
 
 use InvalidArgumentException;
-use Myohanhtet\Config\DB;
 use Myohanhtet\Config\MyLogger;
+use Myohanhtet\Libs\DB;
 use PDO;
 
 class User
