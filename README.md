@@ -31,7 +31,7 @@ User Code: ```DEMO001```
 
 Password: ```Admin@123```
 ## Todo
-- [ ] encrypt get request Id
+- [x] encrypt get request Id
 - [ ] document upload/download
 - [ ] billing
 - [ ] Landing Page
