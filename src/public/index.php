@@ -1,4 +1,7 @@
 <?php
+
+use Myohanhtet\Config\View;
+
 session_start();
 require_once __DIR__ . '/../../vendor/autoload.php';
 $routes = include '../route.php';
@@ -18,8 +21,7 @@ if ($route) {
     //$controllerInstance->$action();
     call_user_func_array([$controllerInstance, $action], $route['params']);
 } else {
-    //Todo : create error page
-    echo "404 Not Found";
+    View::render('errors/404',[],404);
 }
 
 function getMatchingRoute($request_uri, $routes) {
