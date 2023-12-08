@@ -18,13 +18,19 @@ web root `src\publish`
 
 edit config file `src\Config\config.php`
 ```php  
-'session' => 36000, //second  
-    'db' => [  
-        'host' => 'localhost',  
-        'dbname' => 'mini',  
-        'username' => 'root',  
-        'password' => ''  
-    ]  
+'timezone' => "Asia/Yangon",
+'session' => 36000, //second
+'db' => [
+    'host' => 'localhost',
+    'dbname' => 'mini',
+    'username' => 'root',
+    'password' => ''
+],
+'encryption' => [
+    'key' => 'your-key',
+    'cipher' => 'AES-256-CBC',
+    'iv' => 'abc123'
+], 
 ```  
 ## Demo user
 User Code: ```DEMO001```

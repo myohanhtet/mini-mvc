@@ -10,8 +10,8 @@ return [
         'password' => ''
     ],
     'encryption' => [
-        'key' => 'your',
+        'key' => 'your-key',
         'cipher' => 'AES-256-CBC',
-        'iv' => 'muni123'
+        'iv' => 'abc123'
     ],
 ];
